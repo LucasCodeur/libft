@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "functions.h"
+#include "libft.h"
 
 void		test_ft_isalpha(void)
 {

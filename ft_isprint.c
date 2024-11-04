@@ -16,16 +16,19 @@ int     ft_space(int c)
 {
     if (c == ' ')
         return (1);
+    return (0);
 }
 
 int     ft_isponctuation(int c)
 {
-    if ((c >= '!' && <= '/') || c >= '[' && c <= '`')
+    if ((c >= '!' && c <= '/') || (c >= '[' && c <= '`') || (c >= '{' && c <= '~'))
         return (1);
+    return (0);
 }
 
 int ft_isprint(int c)
 {
     if (ft_isalnum(c) == 1 || ft_space(c) == 1 || ft_isponctuation(c) == 1)
         return (1);
+    return (0);
 }
