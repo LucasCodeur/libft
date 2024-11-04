@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 15:24:08 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/01 16:44:51 by lud-adam         ###   ########lyon.fr   */
+/*   Created: 2024/11/04 14:04:28 by lud-adam          #+#    #+#             */
+/*   Updated: 2024/11/04 18:54:09 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <functions.h>
+#include "libft.h"
 
 int     ft_isalnum(int c)
 {

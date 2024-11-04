@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:04:34 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/04 17:06:31 by lud-adam         ###   ########lyon.fr   */
+/*   Created: 2024/11/04 18:17:16 by lud-adam          #+#    #+#             */
+/*   Updated: 2024/11/04 18:56:11 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+int     ft_space(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+    if (c == ' ')
+        return (1);
+}
+
+int     ft_isponctuation(int c)
+{
+    if ((c >= '!' && <= '/') || c >= '[' && c <= '`')
+        return (1);
+}
+
+int ft_isprint(int c)
+{
+    if (ft_isalnum(c) == 1 || ft_space(c) == 1 || ft_isponctuation(c) == 1)
+        return (1);
 }

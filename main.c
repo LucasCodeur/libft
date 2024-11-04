@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:39:49 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/02 19:21:33 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/04 18:31:04 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int		main(void)
 	// ISASCII
 	
 		//test_ft_isascii();
-		printf("%d",isxdigit('f'));
 	
+	// ISPRINT
+	
+		test_ft_isprint();
 	return (0);
 }

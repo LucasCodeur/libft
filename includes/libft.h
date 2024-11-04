@@ -23,5 +23,8 @@ int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int ft_isalnum(int c);
 int ft_isascii(char c);
+int ft_space(int c);
+int ft_isponctuation(int c);
+int ft_isprint(int c);
 
 #endif

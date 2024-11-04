@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/01 18:43:13 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/04 18:49:24 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);
 void    test_ft_isalnum(void);
 void    test_ft_isascii(void);
+void    test_ft_isprint(void);
 
 #endif
