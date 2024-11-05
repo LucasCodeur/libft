@@ -1,45 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 14:39:49 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/05 14:12:53 by lud-adam         ###   ########lyon.fr   */
+/*   Created: 2024/11/05 15:12:15 by lud-adam          #+#    #+#             */
+/*   Updated: 2024/11/05 15:59:00 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-int		main(void)
+void    *ft_memset(void *pointer, int value, size_t count)
 {
-//PART 1
+    unsigned int     i;
+    void    *p;
 
-	// FT_ISALPHA
-
-		// test_ft_isalpha();
-
-	// FT_ISDIGIT
-
-		// test_ft_isdigit();
-
-	// FT_ISISALNUM
-	
-		// test_ft_isalnum();
-	
-	// FT_ISASCII
-	
-		//test_ft_isascii();
-	
-	// FT_ISPRINT
-	
-		//test_ft_isprint();
-	
-	// FT_STRLEN
-		// test_ft_strlen();
-	
-	// FT_MEMSET
-		test_ft_memset();
-	return (0);
+    p = &pointer;
+    i = sizeof(unsigned int) / sizeof(count);
+    while (i < count)
+    {
+        *(int *)pointer = value;
+        pointer += sizeof(value);
+        i += sizeof(unsigned int); 
+    }
+    return (p);
 }

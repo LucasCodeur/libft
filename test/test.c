@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:17:01 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/04 18:48:04 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/05 15:12:04 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,55 @@ void    test_ft_isascii(void)
 	printf("\n------------------------- END --------------------------\n");
 }
 
-void	test_ft_isprint(void)
+void	test_ft_strlen(void)
 {
-	printf("------------------- TEST FT_ISPRINT -------------------\n");
+	printf("------------------- TEST FT_STRLEN -------------------\n");
+	printf("TEST COUNT SIZE STRING  : \n\n ft_strlen : %zu\n strlen : %zu\n", ft_strlen(TEST_STRING), strlen(TEST_STRING));
+	printf("\n------------------------- END --------------------------\n");
+}
+
+void	test_ft_memset(void)
+{
+	int	array[] = {1, 2, 3, 4, 5};
+	int		i;
+	int		j;
+	
+	i = 0;
+	j = 1;
+	printf("------------------- TEST FT_MEMSET -------------------\n");
+	printf("MEMSET : ");
+	printf("\n\n");
+	while (i < 5)
+	{
+		printf("%d", array[i]);
+		i++;
+	}
 	printf("\n");
-	printf("TEST ALPHA_MINUS : \n\n ft_isprint : %d\n isprint : %d\n", ft_isprint(TEST_ALPHA_MINUS), isprint(TEST_ALPHA_MINUS));
+	i = 0;
+	memset(array, 0, sizeof(array));
+	while (i < 5)
+	{
+		printf("%d", array[i]);
+		i++;
+	}
+	printf("\n\n");
+	printf("FT_MEMSET : ");
+	printf("\n\n");
+	i = 0;
+	while (i < 5)
+	{
+		array[i] = j;
+		printf("%d", array[i]);
+		i++;
+		j++;
+	}
 	printf("\n");
-	printf("TEST ALPHA_CAPITAL : \n\n ft_isprint : %d\n isprint : %d\n", ft_isprint(TEST_ALPHA_CAPITAL), isprint(TEST_ALPHA_CAPITAL));
-	printf("\n");
-	printf("TEST SPACE : \n\n ft_isprint : %d\n isprint : %d\n", ft_isprint(' '), isprint(' '));
-	printf("\n");
-	printf("TEST SPECIAL CHARACTER : \n\n ft_isprint : %d\n isprint : %d\n", ft_isprint(TEST_SPECIAL_CHARACTER), isprint(TEST_SPECIAL_CHARACTER));
-	printf("\n");
-	printf("TEST END SPECIAL CHARACTER : \n\n ft_isprint : %d\n isprint : %d\n", ft_isprint(TEST_END_SPECIAL_CHARACTER), isprint(TEST_END_SPECIAL_CHARACTER));
-	printf("\n");
-	printf("TEST WRONG CHARACTER : \n\n ft_isprint : %d\n isprint : %d\n", ft_isprint('\n'), isprint('\n'));
+	i = 0;
+	ft_memset(array, 0, sizeof(array));
+	while (i < 5)
+	{
+		printf("%d", array[i]);
+		i++;
+	}
+	printf("\n------------------------- END --------------------------\n");
 }

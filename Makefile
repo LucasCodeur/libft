@@ -6,7 +6,7 @@
 #    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/04 18:53:05 by lud-adam         ###   ########lyon.fr    #
+#    Updated: 2024/11/05 15:35:50 by lud-adam         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRC := ft_isalpha.c \
 	   ft_isalnum.c \
 	   ft_isascii.c \
 	   ft_isprint.c \
+	   ft_strlen.c \
+	   ft_memset.c \
 	   test/test.c \
 	   main.c \
 
