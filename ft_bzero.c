@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:12:15 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/06 13:23:47 by lud-adam         ###   ########lyon.fr   */
+/*   Created: 2024/11/06 11:46:14 by lud-adam          #+#    #+#             */
+/*   Updated: 2024/11/06 11:46:21 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void    *ft_memset(void *pointer, int value, size_t count)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned int     i;
-    void    *p;
-
-    p = &pointer;
-    i = 0;
-    while (i < count)
-    {
-        *(unsigned char *)pointer = value;
-        i++; 
-    }
-    return (p);
+    
 }

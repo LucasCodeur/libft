@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:17:01 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/05 15:12:04 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/06 13:44:23 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,53 @@ void	test_ft_memset(void)
 		i++;
 	}
 	printf("\n");
+	printf("\n");
+	i = 0;
+	memset(array, 'A', sizeof(array));
+	while (i < 5)
+	{
+		printf("%d", array[i]);
+		i++;
+	}
+	printf("\n\n");
+	printf("FT_MEMSET : ");
+	printf("\n\n");
+	i = 0;
+	while (i < 5)
+	{
+		array[i] = j;
+		printf("%d", array[i]);
+		i++;
+		j++;
+	}
+	printf("\n");
+	i = 0;
+	ft_memset(array, 0, sizeof(array));
+	while (i < 5)
+	{
+		printf("%d", array[i]);
+		i++;
+	}
+	printf("\n------------------------- END --------------------------\n");
+}
+
+void	test_ft_bzero(void)
+{
+	int	array[] = {1, 2, 3, 4, 5};
+	int		i;
+	int		j;
+	
+	i = 0;
+	j = 1;
+	printf("------------------- TEST FT_BZERO -------------------\n");
+	printf("BZERO : ");
+	printf("\n\n");
+	while (i < 5)
+	{
+		printf("%d", array[i]);
+		i++;
+	}
+	printf("\n");
 	i = 0;
 	memset(array, 0, sizeof(array));
 	while (i < 5)
@@ -100,7 +147,7 @@ void	test_ft_memset(void)
 		i++;
 	}
 	printf("\n\n");
-	printf("FT_MEMSET : ");
+	printf("FT_BZERO : ");
 	printf("\n\n");
 	i = 0;
 	while (i < 5)
