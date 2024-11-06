@@ -6,15 +6,15 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:54:45 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/05 13:11:17 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/06 15:08:19 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stddef.h>
+#include <stddef.h>
 
-size_t     ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-     if (*str == '\0') 
-        return (0);
-    return (1 + ft_strlen(str + 1));
+	if (*str == '\0')
+		return (0);
+	return (1 + ft_strlen(str + 1));
 }

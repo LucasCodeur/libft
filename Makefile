@@ -6,7 +6,7 @@
 #    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/06 13:59:52 by lud-adam         ###   ########lyon.fr    #
+#    Updated: 2024/11/06 15:30:02 by lud-adam         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,19 @@ NAME := libft.a
 CC := cc
 CFLAGS := -Wall -Werror -Wextra
 DEBUG := -g
-INC := libft.h \
-		functions_test.h 
-
+INC := -I.
 SRC := ft_isalpha.c \
        ft_isdigit.c \
        ft_isalnum.c \
        ft_isascii.c \
        ft_isprint.c \
        ft_strlen.c \
-       ft_memset.c
+       ft_memset.c \
+	   main.c \
 
-TEST_SRC := test/test.c
+TEST_SRC := test.c
+
+TEST_OBJ := $(TEST_SRC:.c=.o)
 OBJ := $(SRC:.c=.o)
 
 all: $(NAME)
@@ -36,8 +37,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-test_exec: $(NAME) $(TEST_SRC:.c=.o)
-	$(CC) $(CFLAGS) $(INC) $(TEST_SRC) -o test_exec $(NAME)
+test_exec: $(NAME) $(TEST_OBJ)
+	$(CC) $(CFLAGS) $(INC) $(TEST_OBJ) -o test_exec $(NAME)
 
 clean:
 	rm -f $(OBJ) $(TEST_SRC:.c=.o)
