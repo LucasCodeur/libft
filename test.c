@@ -6,9 +6,19 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:17:01 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/06 15:22:05 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/07 11:24:35 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#define UPPERCASE 0000 0001
+#define LOWERCASE 0000 0010
+
+#define 
+
+int	c;
+
+c |= UPPERCASE
+
 
 #include "libft.h"
 
@@ -97,46 +107,89 @@ void	test_ft_strlen(void)
 
 void	test_ft_memset(void)
 {
-	int	array[] = {1, 2, 3, 4, 5};
+	// int	array[] = {1, 2, 3, 4, 5};
+	// int		i;
+	// int		j;
+	
+	// i = 0;
+	// j = 1;
+	// printf("------------------- TEST FT_MEMSET -------------------\n");
+	// printf("MEMSET : ");
+	// printf("\n\n");
+	// while (i < 5)
+	// {
+	// 	printf("%d", array[i]);
+	// 	i++;
+	// }
+	// printf("\n");
+	// printf("\n");
+	// i = 0;
+	// memset(array, 0, sizeof(array));
+	// while (i < 5)
+	// {
+	// 	printf("%d", array[i]);
+	// 	i++;
+	// }
+	// printf("\n\n");
+	// printf("FT_MEMSET : ");
+	// printf("\n\n");
+	// i = 0;
+	// while (i < 5)
+	// {
+	// 	array[i] = j;
+	// 	printf("%d", array[i]);
+	// 	i++;
+	// 	j++;
+	// }
+	// printf("\n");
+	// i = 0;
+	// ft_memset(array, 0, sizeof(array));
+	// while (i < 5)
+	// {
+	// 	printf("%d", array[i]);
+	// 	i++;
+	// }
+	// printf("\n------------------------- END --------------------------\n");
+
+	// Test with character
+	
+	char	array[] = "testt";
+	char	array1[] = "testt";
 	int		i;
-	int		j;
 	
 	i = 0;
-	j = 1;
 	printf("------------------- TEST FT_MEMSET -------------------\n");
 	printf("MEMSET : ");
 	printf("\n\n");
-	while (i < 5)
+	while (array[i])
 	{
-		printf("%d", array[i]);
+		printf("%c", array[i]);
 		i++;
 	}
 	printf("\n");
 	printf("\n");
 	i = 0;
-	memset(array, 'A', sizeof(array));
+	memset(array, 'c', 5);
 	while (i < 5)
 	{
-		printf("%d", array[i]);
+		printf("%c", array[i]);
 		i++;
 	}
 	printf("\n\n");
 	printf("FT_MEMSET : ");
 	printf("\n\n");
 	i = 0;
-	while (i < 5)
+	while (array1[i])
 	{
-		array[i] = j;
-		printf("%d", array[i]);
+		printf("%c", array1[i]);
 		i++;
-		j++;
 	}
 	printf("\n");
 	i = 0;
-	ft_memset(array, 0, sizeof(array));
-	while (i < 5)
+	ft_memset(array1, 'c', 5);
+	while (array1[i])
 	{
-		printf("%d", array[i]);
+		printf("%c", array1[i]);
 		i++;
 	}
 	printf("\n------------------------- END --------------------------\n");
