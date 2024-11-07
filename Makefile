@@ -6,13 +6,13 @@
 #    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/06 15:30:02 by lud-adam         ###   ########lyon.fr    #
+#    Updated: 2024/11/07 15:16:36 by lud-adam         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 CC := cc
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -g
 DEBUG := -g
 INC := -I.
 SRC := ft_isalpha.c \
@@ -38,7 +38,7 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 test_exec: $(NAME) $(TEST_OBJ)
-	$(CC) $(CFLAGS) $(INC) $(TEST_OBJ) -o test_exec $(NAME)
+	$(CC) $(CFLAGS) $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME)
 
 clean:
 	rm -f $(OBJ) $(TEST_SRC:.c=.o)

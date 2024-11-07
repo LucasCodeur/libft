@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:17:01 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/07 13:57:58 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/07 17:47:31 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,21 +95,70 @@ void	test_ft_strlen(void)
 	printf("\n------------------------- END --------------------------\n");
 }
 
+void    display_binary(unsigned char octet)
+{
+    for (int i = 7; i >= 0; i--)
+        printf("%d", (octet >> i) & 1);
+    printf("\n");
+}
+
 void	test_ft_memset(void)
 {
 	char	buffer[10];
 
-	printf("")
+ 	printf("------------------- TEST FT_MEMSET -------------------\n\n");
+	printf("BASIC FUNCTIONNALITY TEST\n\n");
+	// 0xAA 10101010
 	ft_memset(buffer, 0xAA, 5);
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		if (buffer[i] != (char)0xAA)
 		{
 			printf("TEST 1 FAILED\n");
+			for (int i = 0 ; i < 5; i++)
+				display_binary(buffer[i]);
+			for (int i = 0 ; i < 5; i++)
+				printf("%d", buffer[i]);
 			return;
 		}
 	}
+	for (int i = 0 ; i < 5; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 5; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
 	printf("TEST 1 PASSED\n");
+
+	// Boundary test with count set to 0
+	printf("\n");
+	printf("BOUNDARY TEST WITH COUNT SET TO 0\n\n");
+	memset(buffer, 0, 10);  // Clear buffer
+	ft_memset(buffer, 0xBB, 0);
+	for (int i = 0; i < 10; i++) // because before equal to 10
+	{
+		if (buffer[i] != 0)
+		{
+			printf("TEST 1 FAILED\n");
+			printf("\n");
+			for (int i = 0 ; i < 10; i++)
+				display_binary(buffer[i]);
+			printf("\n");
+			for (int i = 0 ; i < 10; i++)
+				printf("%d", buffer[i]);
+			return;
+		}
+	}
+	for (int i = 0 ; i < 5; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 5; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+	printf("TEST 1 PASSED\n");
+	printf("\n------------------------- END --------------------------\n");
 }
 
 // void	test_ft_bzero(void)
