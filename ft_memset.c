@@ -6,40 +6,40 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:12:15 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/07 17:10:05 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/07 20:08:23 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-// void	*ft_memset(void *pointer, int value, size_t count)
-// {
-// 	unsigned char *p;
+void	*ft_memset(void *pointer, int value, size_t count)
+{
+	unsigned char *p;
 	
-// 	p = (unsigned char *)pointer;
-// 	while (count--)
-// 		*p++ = value;		
-// 	return (pointer);
-// }
-
-void *ft_memset(void *pointer, int value, size_t count) {
-    unsigned char *p = (unsigned char *)pointer;
-    unsigned char v = (unsigned char)value;
-
-    // Process 2 bytes at a time
-    while (count >= 2) {
-        *p++ = v;
-        *p++ = v;
-        count -= 2;
-    }
-
-    // Handle any remaining byte
-    if (count > 0) {
-        *p = v;
-    }
-
-    return pointer;
+	p = (unsigned char *)pointer;
+	while (count--)
+		*p++ = value;		
+	return (pointer);
 }
+
+// void *ft_memset(void *pointer, int value, size_t count) {
+//     unsigned char *p = (unsigned char *)pointer;
+//     unsigned char v = (unsigned char)value;
+
+//     // Process 2 bytes at a time
+//     while (count >= 2) {
+//         *p++ = v;
+//         *p++ = v;
+//         count -= 2;
+//     }
+
+//     // Handle any remaining byte
+//     if (count > 0) {
+//         *p = v;
+//     }
+
+//     return pointer;
+// }
 
 // #include <stdint.h>
 

@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:17:01 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/07 17:47:31 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/07 20:08:02 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,9 @@ void	test_ft_memset(void)
 	char	buffer[10];
 
  	printf("------------------- TEST FT_MEMSET -------------------\n\n");
+
+	// Test 1 Basic Functionality
+	
 	printf("BASIC FUNCTIONNALITY TEST\n\n");
 	// 0xAA 10101010
 	ft_memset(buffer, 0xAA, 5);
@@ -129,9 +132,10 @@ void	test_ft_memset(void)
 		printf("%d", buffer[i]);
 	printf("\n");
 	printf("\n");
-	printf("TEST 1 PASSED\n");
+	printf("TEST 1 PASSED\n\n");
 
-	// Boundary test with count set to 0
+	// Test 2 Boundary test with count set to 0
+	printf("------------------------------------------------------------------\n\n");
 	printf("\n");
 	printf("BOUNDARY TEST WITH COUNT SET TO 0\n\n");
 	memset(buffer, 0, 10);  // Clear buffer
@@ -157,7 +161,81 @@ void	test_ft_memset(void)
 		printf("%d", buffer[i]);
 	printf("\n");
 	printf("\n");
-	printf("TEST 1 PASSED\n");
+	printf("TEST 2 PASSED\n\n");
+
+	//  Test Full Buffer
+	printf("------------------------------------------------------------------\n\n");
+	printf("TEST FULL BUFFER\n\n");
+	ft_memset(buffer, 0xCC, 10);
+	for (int i = 0; i < 10; i++)
+	{
+		if (buffer[i] != (char)0xCC)
+		{
+			printf("Test 3 FAILED\n");
+			for (int i = 0; i < 10; i++)
+				display_binary(buffer[i]);
+			for (int i = 0 ; i < 10; i++)
+				printf("%d", buffer[i]);
+			return;
+		}
+	}
+	for (int i = 0 ; i < 10; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 10; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+	printf("Test 3 PASSED\n");
+
+	// Test 4 Edge Case with value 0x00 and 0xFF
+	
+	printf("------------------------------------------------------------------\n\n");
+	printf("TEST EDGE CASE WITH VALUE 0X00 AND 0XFF\n");
+	printf("\nTEST A\n\n");
+	memset(buffer, 0xAA, 10);  // Initialize buffer
+    ft_memset(buffer, 0x00, 10);
+    for (int i = 0; i < 10; i++) 
+	{
+        if (buffer[i] != (char)0x00) 
+		{
+            printf("TEST 4A FAILED\n\n");
+			for (int i = 0; i < 10; i++)
+				display_binary(buffer[i]);
+			printf("\n");
+			for (int i = 0 ; i < 10; i++)
+				printf("%c", buffer[i]);
+            return;
+        }
+    }
+	for (int i = 0; i < 10; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 10; i++)
+		printf("%d", buffer[i]);
+	printf("\n\n");
+	ft_memset(buffer, 0xf1, 10);
+	for (int i = 0; i < 10; i++) 
+	{
+        if (buffer[i] != (char)0xff) 
+		{
+            printf("TEST 4B FAILED\n");
+			printf("\n");
+			for (int i = 0; i < 10; i++)
+				display_binary(buffer[i]);
+			printf("\n");
+			for (int i = 0 ; i < 10; i++)
+				printf("%d", buffer[i]);        
+			return;
+        }
+    }
+	for (int i = 0 ; i < 10; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 10; i++)
+		printf("%d", buffer[i]);
+	printf("\n\nTest 4 Passed\n");
+	printf("\n------------------------------------------------------------------\n");
 	printf("\n------------------------- END --------------------------\n");
 }
 
