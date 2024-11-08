@@ -1,49 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 14:39:49 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/08 10:49:50 by lud-adam         ###   ########lyon.fr   */
+/*   Created: 2024/11/08 11:46:00 by lud-adam          #+#    #+#             */
+/*   Updated: 2024/11/08 11:46:01 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		main(void)
-{
-//PART 1
-
-	// FT_ISALPHA
-
-		// test_ft_isalpha();
-
-	// FT_ISDIGIT
-
-		// test_ft_isdigit();
-
-	// FT_ISISALNUM
-	
-		// test_ft_isalnum();
-	
-	// FT_ISASCII
-	
-		//test_ft_isascii();
-	
-	// FT_ISPRINT
-	
-		//test_ft_isprint();
-	
-	// FT_STRLEN
-		// test_ft_strlen();
-	
-	// FT_MEMSET
-		//test_ft_memset();
-	
-	// FT_BZERO
-		test_ft_bzero();
-		
-	return (0);
-}

@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/06 15:12:15 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 11:15:26 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@
 # define TEST_SPECIAL_CHARACTER '!'
 # define TEST_END_SPECIAL_CHARACTER '~'
 # define TEST_STRING "test"
+
+# include <ctype.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <string.h>
 
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);

@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:17:01 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/07 20:08:02 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 11:44:49 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,48 +239,132 @@ void	test_ft_memset(void)
 	printf("\n------------------------- END --------------------------\n");
 }
 
-// void	test_ft_bzero(void)
-// {
-// 	int	array[] = {1, 2, 3, 4, 5};
-// 	int		i;
-// 	int		j;
+void	test_ft_bzero(void)
+{
+	char	buffer[10];
+
+ 	printf("------------------- TEST FT_BZERO -------------------\n\n");
+
+	// Test 1 Basic Functionality
 	
-// 	i = 0;
-// 	j = 1;
-// 	printf("------------------- TEST FT_BZERO -------------------\n");
-// 	printf("BZERO : ");
-// 	printf("\n\n");
-// 	while (i < 5)
-// 	{
-// 		printf("%d", array[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// 	i = 0;
-// 	memset(array, 0, sizeof(array));
-// 	while (i < 5)
-// 	{
-// 		printf("%d", array[i]);
-// 		i++;
-// 	}
-// 	printf("\n\n");
-// 	printf("FT_BZERO : ");
-// 	printf("\n\n");
-// 	i = 0;
-// 	while (i < 5)
-// 	{
-// 		array[i] = j;
-// 		printf("%d", array[i]);
-// 		i++;
-// 		j++;
-// 	}
-// 	printf("\n");
-// 	i = 0;
-// 	ft_memset(array, 0, sizeof(array));
-// 	while (i < 5)
-// 	{
-// 		printf("%d", array[i]);
-// 		i++;
-// 	}
-// 	printf("\n------------------------- END --------------------------\n");
-// }
+	printf("BASIC FUNCTIONNALITY TEST\n\n");
+///////////////////////////////////////////
+	ft_memset(buffer, 0xAA, 5);
+	for (int i = 0 ; i < 5; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 5; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+///////////////////////////////////////////
+	ft_bzero(buffer, 5);
+	for (int i = 0; i < 1; i++)
+	{
+		if (buffer[i] != (char)0)
+		{
+			printf("TEST 1 FAILED\n");
+			for (int i = 0 ; i < 5; i++)
+				display_binary(buffer[i]);
+			for (int i = 0 ; i < 5; i++)
+				printf("%d", buffer[i]);
+			return;
+		}
+	}
+	for (int i = 0 ; i < 5; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 5; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+	printf("TEST 1 PASSED\n\n");
+
+	// Test 2 Count set to 0
+	printf("------------------------------------------------------------------\n\n");
+	printf("\n");
+	printf("BOUNDARY TEST WITH COUNT SET TO 0\n\n");
+	///////////////////////////////////////////
+	ft_memset(buffer, 1, 5);
+	for (int i = 0 ; i < 5; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 5; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+	///////////////////////////////////////////
+	ft_bzero(buffer, 0);
+	for (int i = 0; i < 5; i++)
+	{
+		if (buffer[i] != 1)
+		{
+			printf("TEST FAILED\n");
+			printf("\n");
+			for (int i = 0 ; i < 5; i++)
+				display_binary(buffer[i]);
+			printf("\n");
+			for (int i = 0 ; i < 5; i++)
+				printf("%d", buffer[i]);
+			return;
+		}
+	}
+	for (int i = 0 ; i < 5; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 5; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+	printf("TEST 2 PASSED\n\n");
+
+	//  Test Full Buffer
+	printf("------------------------------------------------------------------\n\n");
+	printf("TEST FULL BUFFER\n\n");
+	///////////////////////////////////////////
+	ft_memset(buffer, 0xAA, 10);
+	for (int i = 0 ; i < 5; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 5; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+	///////////////////////////////////////////
+	ft_bzero(buffer, 10);
+	for (int i = 0; i < 10; i++)
+	{
+		if (buffer[i] != (char)0)
+		{
+			printf("Test 3 FAILED\n");
+			for (int i = 0; i < 10; i++)
+				display_binary(buffer[i]);
+			for (int i = 0 ; i < 10; i++)
+				printf("%d", buffer[i]);
+			return;
+		}
+	}
+	for (int i = 0 ; i < 10; i++)
+		display_binary(buffer[i]);
+	printf("\n");
+	for (int i = 0 ; i < 10; i++)
+		printf("%d", buffer[i]);
+	printf("\n");
+	printf("\n");
+	printf("Test 3 PASSED\n");
+	printf("\n------------------------- END --------------------------\n");
+}
+
+void	test_ft_memcpy()
+{
+	void	*dest;
+	const void	*src[] = "patate chaude au four";
+	size_t n;
+
+	n = 23;
+
+	printf("------------------- TEST FT_MEMCPY -------------------\n\n");
+	ft_memcpy(dest, src, n);
+	printf("%s", dest);
+	printf("\n------------------------- END --------------------------\n");
+}
