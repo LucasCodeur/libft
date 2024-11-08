@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 18:17:01 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/08 11:44:49 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 13:50:00 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -355,16 +355,20 @@ void	test_ft_bzero(void)
 	printf("\n------------------------- END --------------------------\n");
 }
 
-void	test_ft_memcpy()
+void	test_ft_memcpy(void)
 {
 	void	*dest;
-	const void	*src[] = "patate chaude au four";
+	char 	test[] = "patate chaude au four";
+	char	*array;
+	const void	*src;
 	size_t n;
 
 	n = 23;
+	src = &test;
+	dest = &array;
 
 	printf("------------------- TEST FT_MEMCPY -------------------\n\n");
 	ft_memcpy(dest, src, n);
-	printf("%s", dest);
+	printf("%s", array);
 	printf("\n------------------------- END --------------------------\n");
 }

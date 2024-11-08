@@ -6,7 +6,21 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:46:00 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/08 11:46:01 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 13:57:12 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void    *ft_memcpy(void *dest, const void *src, size_t n)
+{
+    int     i;
+    
+    i = 0;
+    while ((*(unsigned char)src)[i] != '\0')
+    {
+        (*p)[i] = src[i];
+        i++;
+    }
+    return (p);
+}

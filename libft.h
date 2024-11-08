@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:55:59 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/08 11:16:34 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/08 13:47:21 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int		ft_isprint(int c);
 size_t	ft_strlen(char *str);
 void	*ft_memset(void *pointer, int value, size_t count);
 void	ft_bzero(void *s, size_t n);
+void    *ft_memcpy(void *dest, const void *src, size_t n);
+
 
 #endif
