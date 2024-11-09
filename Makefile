@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
+#    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/08 13:52:07 by lud-adam         ###   ########lyon.fr    #
+#    Updated: 2024/11/09 21:33:50 by eveil            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,20 @@ SRC := ft_isalpha.c \
 	   ft_bzero.c \
 	   ft_memcpy.c \
 	   ft_memmove.c \
-	   main.c \
 
-TEST_SRC := test.c
-
+TEST_SRC := test/test_ft_is_alpha.c \
+			test/test_ft_is_digit.c \
+			test/test_ft_is_alnum.c \
+			test/test_ft_is_ascii.c \
+			test/test_ft_isprint.c \
+			test/test_ft_bzero.c \
+			test/test_ft_memcpy.c \
+			test/test_ft_memmove.c \
+			test/test_ft_memset.c \
+			test/test_ft_strlen.c \
+			test/functions_utils.c \
+			test/main.c \
+			
 TEST_OBJ := $(TEST_SRC:.c=.o)
 OBJ := $(SRC:.c=.o)
 

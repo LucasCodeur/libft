@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:55:59 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/08 13:47:21 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/09 22:03:21 by eveil            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUNCTIONS_H
 # define FUNCTIONS_H
 
-# include "functions_test.h"
 # include <stdlib.h>
 # include <unistd.h>
 
