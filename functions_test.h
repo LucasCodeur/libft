@@ -36,5 +36,6 @@ void	test_ft_strlen(void);
 void    test_ft_memset(void);
 void    test_ft_bzero(void);
 void    test_ft_memcpy(void);
+void    test_ft_memmove(void);
 
 #endif

@@ -46,6 +46,9 @@ int		main(void)
 		//test_ft_bzero();
 		
 	// FT_MEMCPY
-		test_ft_memcpy();
+		//test_ft_memcpy();
+	
+	// FT_MEMMOVE
+		test_ft_memmove();
 	return (0);
 }

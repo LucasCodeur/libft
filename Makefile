@@ -24,6 +24,7 @@ SRC := ft_isalpha.c \
        ft_memset.c \
 	   ft_bzero.c \
 	   ft_memcpy.c \
+	   ft_memmove.c \
 	   main.c \
 
 TEST_SRC := test.c

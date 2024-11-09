@@ -358,17 +358,35 @@ void	test_ft_bzero(void)
 void	test_ft_memcpy(void)
 {
 	void	*dest;
-	char 	test[] = "patate chaude au four";
-	char	*array;
-	const void	*src;
-	size_t n;
+	const char	src[] = "patate chaude au four";
 
-	n = 23;
-	src = &test;
-	dest = &array;
-
+	dest = malloc(ft_strlen(src) + 1);
+	if (dest == NULL)
+	{
+		printf("Memory allocation failed\n");
+        return;
+	}
 	printf("------------------- TEST FT_MEMCPY -------------------\n\n");
-	ft_memcpy(dest, src, n);
-	printf("%s", array);
+	ft_memcpy(dest, src, ft_strlen(src));
+	printf("%s", (char *)dest);
+	printf("\n");
+	printf("\n------------------------- END --------------------------\n");
+}
+
+void	test_ft_memmove(void)
+{
+	void	*dest;
+	const char	src[] = "patate chaude au four";
+
+	dest = malloc(ft_strlen(src) + 1);
+	if (dest == NULL)
+	{
+		printf("Memory allocation failed\n");
+        return;
+	}
+	printf("------------------- TEST FT_MEMMOVE -------------------\n\n");
+	ft_memmove(dest, src, ft_strlen(src));
+	printf("%s", (char *)dest);
+	printf("\n");
 	printf("\n------------------------- END --------------------------\n");
 }
