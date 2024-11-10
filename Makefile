@@ -6,47 +6,53 @@
 #    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/09 21:33:50 by eveil            ###   ########lyon.fr    #
+#    Updated: 2024/11/10 11:45:54 by eveil            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 CC := cc
-CFLAGS := -Wall -Werror -Wextra -g
+CFLAGS := -Wall -Werror -Wextra
 DEBUG := -g
 INC := -I.
-SRC := ft_isalpha.c \
-       ft_isdigit.c \
-       ft_isalnum.c \
-       ft_isascii.c \
-       ft_isprint.c \
-       ft_strlen.c \
-       ft_memset.c \
-	   ft_bzero.c \
-	   ft_memcpy.c \
-	   ft_memmove.c \
 
-TEST_SRC := test/test_ft_is_alpha.c \
-			test/test_ft_is_digit.c \
-			test/test_ft_is_alnum.c \
-			test/test_ft_is_ascii.c \
-			test/test_ft_isprint.c \
-			test/test_ft_bzero.c \
-			test/test_ft_memcpy.c \
-			test/test_ft_memmove.c \
-			test/test_ft_memset.c \
-			test/test_ft_strlen.c \
-			test/functions_utils.c \
-			test/main.c \
-			
-TEST_OBJ := $(TEST_SRC:.c=.o)
-OBJ := $(SRC:.c=.o)
+# Directories for object and dependency files
+OBJ_DIR := obj
+DEP_DIR := dep
+
+# Create directories if they don't exist
+$(shell mkdir -p $(OBJ_DIR) $(DEP_DIR))
+
+# Source files
+SRC := $(shell ls *.c)
+
+TEST_SRC := $(shell ls test/*.c)
+
+
+# Object and dependency files
+OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
+DEP := $(addprefix $(DEP_DIR)/, $(SRC:.c=.d))
+TEST_OBJ := $(addprefix $(OBJ_DIR)/, $(TEST_SRC:.c=.o))
+TEST_DEP := $(addprefix $(DEP_DIR)/, $(TEST_SRC:.c=.d))
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+# Include dependency files if they exist
+-include $(DEP)
+-include $(TEST_DEP)
 
+# $@ = the full target name
+# $(@D) = just the directory part of the target
+# $(@F) = just the file part of the target
+# the -p = create parent directories if they don't exist / Doesn't error if directory exist
+# @mkdir = allow to avoid to display in the output a message in the creation of the directory
+# -MF =  Allow to stock in a accurate location all .d
+# -MP allow to make to continue the building without a throwing an error
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(@D)
+	@mkdir -p $(DEP_DIR)/$(*D)
+	$(CC) $(CFLAGS) $(INC) -MMD -MP -MF $(DEP_DIR)/$*.d -c $< -o $@
+	
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
@@ -54,7 +60,7 @@ test_exec: $(NAME) $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME)
 
 clean:
-	rm -f $(OBJ) $(TEST_SRC:.c=.o)
+	rm -rf $(OBJ_DIR) $(DEP_DIR)
 
 fclean: clean
 	rm -f $(NAME) test_exec
