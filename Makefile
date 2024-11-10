@@ -6,7 +6,7 @@
 #    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/10 11:45:54 by eveil            ###   ########lyon.fr    #
+#    Updated: 2024/11/10 11:47:17 by eveil            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ all: $(NAME)
 
 # $@ = the full target name
 # $(@D) = just the directory part of the target
-# $(@F) = just the file part of the target
+# $(@F) = just the file part of the targeta
 # the -p = create parent directories if they don't exist / Doesn't error if directory exist
 # @mkdir = allow to avoid to display in the output a message in the creation of the directory
 # -MF =  Allow to stock in a accurate location all .d
