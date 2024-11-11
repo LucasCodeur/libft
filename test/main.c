@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:39:49 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/09 22:18:57 by eveil            ###   ########lyon.fr   */
+/*   Updated: 2024/11/11 18:22:46 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test/functions_test.h"
+#include "functions_test.h"
+
 int		main(void)
 {
 //PART 1
@@ -43,6 +44,8 @@ int		main(void)
 		// test_ft_memcpy();
 	
 	// FT_MEMMOVE
-		test_ft_memmove();
+		// test_ft_memmove();
+	// FT_STRLCPY
+		test_ft_strlcpy();
 	return (0);
 }

@@ -6,13 +6,13 @@
 #    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/11 15:52:13 by lud-adam         ###   ########lyon.fr    #
+#    Updated: 2024/11/11 18:26:08 by lud-adam         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 CC := cc
-CFLAGS := -Wall -Werror -Wextra -g
+CFLAGS := -Wall -Werror -Wextra -g -lbsd
 DEBUG := -g
 INC := -I.
 
@@ -51,6 +51,11 @@ $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(@D)
 	@mkdir -p $(DEP_DIR)/$(*D)
 	$(CC) $(CFLAGS) $(INC) -MMD -MP -MF $(DEP_DIR)/$*.d -c $< -o $@
+
+# $(OBJ_DIR)/test_ft_strlcpy.o: test_ft_strlcpy.c
+# 	@mkdir -p $(@D)
+# 	@mkdir -p $(DEP_DIR)/$(*D)
+# 	$(CC) $(CFLAGS) $(INC) -MMD -MP -MF $(DEP_DIR)/test_ft_strlcpy.d -c test_ft_strlcpy.c -o $@
 	
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)

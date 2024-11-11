@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions_test.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/09 22:03:45 by eveil            ###   ########lyon.fr   */
+/*   Updated: 2024/11/11 18:23:43 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,12 @@
 # define BG_CYAN    "\x1b[46m"
 # define BG_WHITE   "\x1b[47m"
 
-# include "libft.h"
+# include "../libft.h"
 # include <ctype.h>
 # include <fcntl.h>
 # include <stdio.h>
 # include <string.h>
+# include <bsd/string.h>
 
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);
@@ -66,6 +67,7 @@ void    test_ft_memset(void);
 void    test_ft_bzero(void);
 void    test_ft_memcpy(void);
 void    test_ft_memmove(void);
+void    test_ft_strlcpy(void);
 void    display_binary(unsigned char octet);
 
 #endif
