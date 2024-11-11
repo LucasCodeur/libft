@@ -15,8 +15,5 @@ void	test_ft_memcpy(void)
 	ft_memcpy(dest, src, ft_strlen(src));
 	printf("%s", (char *)dest);
 	printf("\n");
-	printf(BLUE"\n------------------------ END -------------------------\n"RESET);
-	
-	// TEST 2 with 2 pointers NULL
-	
+	printf(BLUE"\n------------------------ END -------------------------\n"RESET);	
 }

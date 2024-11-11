@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
+#    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/10 11:47:17 by eveil            ###   ########lyon.fr    #
+#    Updated: 2024/11/11 15:52:13 by lud-adam         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 CC := cc
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -g
 DEBUG := -g
 INC := -I.
 
@@ -27,7 +27,6 @@ $(shell mkdir -p $(OBJ_DIR) $(DEP_DIR))
 SRC := $(shell ls *.c)
 
 TEST_SRC := $(shell ls test/*.c)
-
 
 # Object and dependency files
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
@@ -54,7 +53,7 @@ $(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) $(INC) -MMD -MP -MF $(DEP_DIR)/$*.d -c $< -o $@
 	
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
 test_exec: $(NAME) $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME)
