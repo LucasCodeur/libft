@@ -1,6 +1,6 @@
 #include "test/functions_test.h"
 
-void		test_ft_isalpha(void)
+void	test_ft_isalpha(void)
 {
 	printf(BLUE"\n------------------- TEST FT_ISALPHA -------------------\n"RESET);
 	printf("\n");

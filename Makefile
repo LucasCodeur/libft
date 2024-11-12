@@ -6,7 +6,7 @@
 #    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/12 16:12:05 by lud-adam         ###   ########lyon.fr    #
+#    Updated: 2024/11/12 18:45:46 by lud-adam         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(OBJ_DIR)/test_ft_strlcay.o: test_ft_strlcat.c
 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strlcat.d -c test_ft_strlcat.c -o $@
 	
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $?
 
 test_exec: $(NAME) $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME) -lbsd
