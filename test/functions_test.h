@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/11 18:23:43 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/12 16:05:55 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void    test_ft_bzero(void);
 void    test_ft_memcpy(void);
 void    test_ft_memmove(void);
 void    test_ft_strlcpy(void);
+void    test_ft_strlcat(void);
+
 void    display_binary(unsigned char octet);
 
 #endif
