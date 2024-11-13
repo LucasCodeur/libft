@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/13 16:41:52 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 19:37:51 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	test_ft_strchr(void);
 void	test_ft_strrchr(void);
 void	test_ft_strncmp(void);
 void	test_ft_memchr(void);
+void	test_ft_memcmp(void);
+void	test_ft_strnstr(void);
 
 void    display_binary(unsigned char octet);
 

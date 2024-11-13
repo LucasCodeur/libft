@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:39:49 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/13 16:41:18 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/13 19:37:20 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,12 @@ int		main(void)
 		// test_ft_strncmp();
 
 	// FT_MEMCHR
-		test_ft_memchr();
+		// test_ft_memchr();
+	
+	// FT_MEMCMP
+		// test_ft_memcmp();
+	
+	// FT_STRNSTR
+		test_ft_strnstr();
 	return (0);
 }
