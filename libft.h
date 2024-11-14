@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:55:59 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/13 20:05:47 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/14 14:46:36 by eveil            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void 	*ft_memchr(const void *s, int c, size_t n);
 int 	ft_memcmp(const void *s1, const void *s2, size_t n);
 char 	*ft_strnstr(const char *big, const char *little, size_t len);
-
 
 #endif

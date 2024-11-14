@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_strlcpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:24:48 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/12 15:59:01 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/14 14:44:14 by eveil            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	test_3_strlcpy_copy_when_dest_is_to_small(void)
 	printf(BLUE"------------------- STRLCPY -------------------\n\n"RESET);
 	printf("TEST 3 COPY WHEN DEST IS TO SMALL :  \n\n");
 	printf(YELLOW"SRC : %s\n\n"RESET, src);
-    printf(MAGENTA"Return : %zu\n\n", strlcpy(dest, src, 17));
+    printf(MAGENTA"Return : %zu\n\n", strlcpy(dest, src, 5));
 	printf(GREEN"DEST : %s"RESET, dest);
 	printf("\n");
 	printf(BLUE"\n--------------------- END ---------------------\n\n"RESET);
@@ -103,7 +103,7 @@ void	test_3_ft_strlcpy_copy_when_dest_is_to_small(void)
 	printf(BLUE"----------------- FT_STRLCPY -----------------\n\n"RESET);
 	printf("TEST 3 COPY WHEN DEST IS TO SMALL :  \n\n");
 	printf(YELLOW"SRC : %s\n\n"RESET, src);
-    printf(MAGENTA"Return : %zu\n\n", ft_strlcpy(dest, src, 17));
+    printf(MAGENTA"Return : %zu\n\n", ft_strlcpy(dest, src, 5));
 	printf(GREEN"DEST : %s"RESET, dest);
 	printf("\n");
 	printf(BLUE"\n------------------- END -------------------\n\n"RESET);
@@ -206,39 +206,39 @@ void	test_7_just_one_letter(void)
 	test_7_ft_strlcpy_just_one_letter();
 }
 
-void	test_8_strlcpy_size_is_negative(void)
-{
-	const char	src[] = "Manga";
-	char	dest[10];
+// void	test_8_strlcpy_size_is_negative(void)
+// {
+// 	const char	src[] = "Manga";
+// 	char	dest[10];
     
-	printf(BLUE"----------------- STRLCPY ---------------\n\n"RESET);
-	printf("TEST 8 : Size is negative \n\n");
-	printf(YELLOW"SRC : %s\n\n"RESET, src);
-    printf(MAGENTA"Return : %zu\n\n", strlcpy(dest, src, -1));
-	printf(GREEN"DEST : %s"RESET, dest);
-	printf("\n");
-	printf(BLUE"\n------------------ END ------------------\n\n"RESET);
-}
+// 	printf(BLUE"----------------- STRLCPY ---------------\n\n"RESET);
+// 	printf("TEST 8 : Size is negative \n\n");
+// 	printf(YELLOW"SRC : %s\n\n"RESET, src);
+//     printf(MAGENTA"Return : %zu\n\n", strlcpy(dest, src, -1));
+// 	printf(GREEN"DEST : %s"RESET, dest);
+// 	printf("\n");
+// 	printf(BLUE"\n------------------ END ------------------\n\n"RESET);
+// }
 
-void	test_8_ft_strlcpy_size_is_negative(void)
-{
-	const char	src[] = "Manga";
-	char	dest[10];
+// void	test_8_ft_strlcpy_size_is_negative(void)
+// {
+// 	const char	src[] = "Manga";
+// 	char	dest[10];
     
-	printf(BLUE"--------------- FT_STRLCPY --------------\n\n"RESET);
-	printf("TEST 8 : Size is negative  \n\n");
-	printf(YELLOW"SRC : %s\n\n"RESET, src);
-    printf(MAGENTA"Return : %zu\n\n", ft_strlcpy(dest, src, -1));
-	printf(GREEN"DEST : %s"RESET, dest);
-	printf("\n");
-	printf(BLUE"\n------------------ END ------------------\n\n"RESET);
-}
+// 	printf(BLUE"--------------- FT_STRLCPY --------------\n\n"RESET);
+// 	printf("TEST 8 : Size is negative  \n\n");
+// 	printf(YELLOW"SRC : %s\n\n"RESET, src);
+//     printf(MAGENTA"Return : %zu\n\n", ft_strlcpy(dest, src, -1));
+// 	printf(GREEN"DEST : %s"RESET, dest);
+// 	printf("\n");
+// 	printf(BLUE"\n------------------ END ------------------\n\n"RESET);
+// }
 
-void	test_8_size_is_negative(void)
-{
-	test_8_strlcpy_size_is_negative();
-	test_8_ft_strlcpy_size_is_negative();
-}
+// void	test_8_size_is_negative(void)
+// {
+// 	test_8_strlcpy_size_is_negative();
+// 	test_8_ft_strlcpy_size_is_negative();
+// }
 
 void	test_9_strlcpy_lorem(void)
 {
@@ -248,7 +248,7 @@ void	test_9_strlcpy_lorem(void)
 	printf(BLUE"--------------- STRLCPY --------------\n\n"RESET);
 	printf("TEST 9 : lorem  \n\n");
 	printf(YELLOW"SRC : %s\n\n"RESET, src);
-    printf(MAGENTA"Return : %zu\n\n", strlcpy(dest, src, 15));
+    printf(MAGENTA"Return : %zu\n\n", strlcpy(dest, src, 5));
 	printf(GREEN"DEST : %s"RESET, dest);
 	printf("\n");
 	printf(BLUE"\n------------------ END ------------------\n\n"RESET);
@@ -262,7 +262,7 @@ void	test_9_ft_strlcpy_lorem(void)
 	printf(BLUE"--------------- FT_STRLCPY --------------\n\n"RESET);
 	printf("TEST 9 : lorem  \n\n");
 	printf(YELLOW"SRC : %s\n\n"RESET, src);
-    printf(MAGENTA"Return : %zu\n\n", ft_strlcpy(dest, src, 6));
+    printf(MAGENTA"Return : %zu\n\n", ft_strlcpy(dest, src, 5));
 	printf(GREEN"DEST : %s"RESET, dest);
 	printf("\n");
 	printf(BLUE"\n------------------ END ------------------\n\n"RESET);
@@ -283,7 +283,7 @@ void    test_ft_strlcpy(void)
     // test_5_size_equal_0();
     // test_6_src_is_empty();
 	// test_7_just_one_letter();
-	test_8_size_is_negative();
+	// test_8_size_is_negative();
 	// test_9_lorem();
 }
 

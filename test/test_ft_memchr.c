@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_memchr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:32:25 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/13 17:42:25 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/14 14:39:17 by eveil            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ void	test_1_memchr_found_data(void)
 	char data[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
 	void	*found;
 	size_t	size;
-	size_t	i;
-
+	
 	size = 10;
 	found = memchr(data, 50, size);
-	i = 0;
 	printf(BLUE"------------------- memchr -------------------\n\n"RESET);
 	printf("TEST 1 : FOUND DATA \n\n");
 	for (size_t i = 0; i < size; i++)
@@ -38,11 +36,9 @@ void	test_1_ft_memchr_found_data(void)
 	char data[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
 	void	*found;
 	size_t	size;
-	size_t	i;
 
 	size = 10;
 	found = memchr(data, 50, size);
-	i = 0;
 	printf(BLUE"------------------- ft_memchr -------------------\n\n"RESET);
 	printf("TEST 1 : FOUND DATA \n\n");
 	for (size_t i = 0; i < size; i++)
@@ -65,11 +61,9 @@ void	test_2_memchr_with_a_string_and_a_size_smaller(void)
 	const char	data[] = "bonjourno";
 	void	*found;
 	size_t	size;
-	size_t	i;
 
 	size = ft_strlen(data);
 	found = memchr(data, 'n', 2);
-	i = 0;
 	printf(BLUE"------------------- memchr -------------------\n\n"RESET);
 	printf("TEST 2 : WITH A STRING AND A SIZE SMALLER \n\n");
 	printf("STRING : %s\n\n", data);
@@ -87,11 +81,9 @@ void	test_2_ft_memchr_with_a_string_and_a_size_smaller(void)
 	const char	data[] = "bonjourno";
 	void	*found;
 	size_t	size;
-	size_t	i;
 
 	size = ft_strlen(data);
 	found = ft_memchr(data, 'n', 2);
-	i = 0;
 	printf(BLUE"------------------- ft_memchr -------------------\n\n"RESET);
 	printf("TEST 2 : WITH A STRING AND A SIZE SMALLER \n\n");
 	printf("STRING : %s\n\n", data);
