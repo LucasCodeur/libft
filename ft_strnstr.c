@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:43:39 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/14 16:24:10 by eveil            ###   ########lyon.fr   */
+/*   Updated: 2024/11/15 11:25:16 by lud-adam         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int 	i;
 	unsigned int 	j;
-	unsigned int	count;
-	char 	*find;
 
 	i = 0;
-	j = 0;
-	count = 0;
-	find = NULL;
 	if (little[0] == '\0')
 		return ((char *)big);
-	while (big[i] && count <= len)
+	while (big[i] && i < len)
 	{
-		find = (char *)&big[i];
-		while (big[i + j] == little[j] && count <= len)
+		j = 0;
+		while (big[i + j] == little[j] && i + j < len)
 		{
 			if (little[j + 1] == '\0')
-				return (find);
+				return ((char *)&big[i]);
 			else if (big[i + j] != little[j])
 				break;
-
 			j++;
-			count++;
 		}
-		j = 0;
 		i++;
 	}
 	return (NULL);
