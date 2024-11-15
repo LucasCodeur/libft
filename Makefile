@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+         #
+#    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/15 09:56:49 by lud-adam         ###   ########lyon.fr    #
+#    Updated: 2024/11/15 18:07:54 by eveil            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 CC := cc
-CFLAGS := -Wall -Werror -Wextra -g -O0
+CFLAGS := -Wall -Werror -Wextra -g -O0 -lbsd
 # DEBUG := -g
 INC := -I.
 
@@ -50,7 +50,7 @@ all: $(NAME)
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(@D)
 	@mkdir -p $(DEP_DIR)/$(*D)
-	$(CC) $(CFLAGS) $(DEBUG) $(INC) -g -MMD -MP -MF $(DEP_DIR)/$*.d -c $< -o $@
+	$(CC) $(CFLAGS) $(DEBUG) $(INC) -lbsd -g -MMD -MP -MF $(DEP_DIR)/$*.d -c $< -o $@
 
 # $(OBJ_DIR)/test_ft_strlcpy.o: test_ft_strlcpy.c
 # 	@mkdir -p $(@D)

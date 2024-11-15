@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_atoi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:36:56 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/15 16:36:10 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/15 18:24:36 by eveil            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,8 +245,8 @@ void	test_ft_atoi(void)
 	// test_3_with_lot_of_0_and_one_plus();
 	// test_4_francinette();
 	// test_5_ft_isspace();
-	test_6_positive_overflow();
-	// test_7_negative_overflow();
+	// test_6_positive_overflow();
+	test_7_negative_overflow();
 }
 
 // Test_6 : When I put the long positive maximal it return -1

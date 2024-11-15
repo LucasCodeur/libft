@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:35:40 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/15 16:50:35 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/15 18:28:54 by eveil            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ int		ft_is_plus_or_minus(int c)
 
 int		ft_atoi(const char *nptr)
 {
-	int		result;
+	long int		result;
 	int		sign;
-	long long int	cmp;
 
 	result = 0;
 	sign = 1;
@@ -41,10 +40,14 @@ int		ft_atoi(const char *nptr)
 	}
 	while (ft_isdigit(*nptr) == 1 && *nptr != '\0')
 	{
-		cmp = result * 10 + (*nptr - 48);
-		if (cmp >= __LONG_MAX__)
+		int digit; 
+		
+		digit = *nptr - '0';
+		if ((-result < (LONG_MIN + digit) / 10))
+			return (0);
+		if ((result > (LONG_MAX- digit) / 10))
 			return (-1);
-		result = result * 10 + (*nptr - 48);
+		result = result * 10 + digit;
 		nptr++;
 	}
 	return (result * sign);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions_test.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/15 11:44:39 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/15 18:22:11 by eveil            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@
 # include <string.h>
 # include <bsd/string.h>
 # include <stddef.h>
+# include <limits.h>
 
 void	test_ft_isalpha(void);
 void	test_ft_isdigit(void);
