@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:55:59 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/15 12:41:34 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/17 16:01:50 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ void 	*ft_memchr(const void *s, int c, size_t n);
 int 	ft_memcmp(const void *s1, const void *s2, size_t n);
 char 	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
+void    *ft_calloc(size_t nmemb, size_t size);
+char  *ft_strdup(const char * s);
 
 #endif

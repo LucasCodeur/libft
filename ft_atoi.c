@@ -31,7 +31,8 @@ int		ft_atoi(const char *nptr)
 
 	result = 0;
 	sign = 1;
-	while (ft_isspace(*nptr) == 1) nptr++;
+	while (ft_isspace(*nptr) == 1) 
+    nptr++;
 	if (ft_is_plus_or_minus(*nptr) == 1)
 	{
 		if (*nptr == '-')
@@ -40,14 +41,11 @@ int		ft_atoi(const char *nptr)
 	}
 	while (ft_isdigit(*nptr) == 1 && *nptr != '\0')
 	{
-		int digit; 
-		
-		digit = *nptr - '0';
-		if ((-result < (LONG_MIN + digit) / 10))
+		if (-result < (LONG_MIN + (*nptr - 48)) / 10)
 			return (0);
-		if ((result > (LONG_MAX- digit) / 10))
+		if (result > (LONG_MAX - (*nptr - 48)) / 10)
 			return (-1);
-		result = result * 10 + digit;
+		result = result * 10 + (*nptr - 48);
 		nptr++;
 	}
 	return (result * sign);

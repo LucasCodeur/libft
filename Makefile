@@ -12,7 +12,7 @@
 
 NAME := libft.a
 CC := cc
-CFLAGS := -Wall -Werror -Wextra -g -O0 -lbsd
+CFLAGS := -Wall -Werror -Wextra -g -O0 
 # DEBUG := -g
 INC := -I.
 
@@ -50,28 +50,28 @@ all: $(NAME)
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(@D)
 	@mkdir -p $(DEP_DIR)/$(*D)
-	$(CC) $(CFLAGS) $(DEBUG) $(INC) -lbsd -g -MMD -MP -MF $(DEP_DIR)/$*.d -c $< -o $@
+	$(CC) $(CFLAGS) $(DEBUG) $(INC) -g -MMD -MP -MF $(DEP_DIR)/$*.d -c $< -o $@
 
-# $(OBJ_DIR)/test_ft_strlcpy.o: test_ft_strlcpy.c
-# 	@mkdir -p $(@D)
-# 	@mkdir -p $(DEP_DIR)/$(*D)
-# 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strlcpy.d -c test_ft_strlcpy.c -o $@
+$(OBJ_DIR)/test_ft_strlcpy.o: test_ft_strlcpy.c
+	@mkdir -p $(@D)
+	@mkdir -p $(DEP_DIR)/$(*D)
+	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strlcpy.d -c test_ft_strlcpy.c -o $@
 
-# $(OBJ_DIR)/test_ft_strlcat.o: test_ft_strlcat.c
-# 	@mkdir -p $(@D)
-# 	@mkdir -p $(DEP_DIR)/$(*D)
-# 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strlcat.d -c test_ft_strlcat.c -o $@
+$(OBJ_DIR)/test_ft_strlcat.o: test_ft_strlcat.c
+	@mkdir -p $(@D)
+	@mkdir -p $(DEP_DIR)/$(*D)
+	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strlcat.d -c test_ft_strlcat.c -o $@
 
-# $(OBJ_DIR)/test_ft_strnstr.o: test_ft_strnstr.c
-# 	@mkdir -p $(@D)
-# 	@mkdir -p $(DEP_DIR)/$(*D)
-# 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strnstr.d -c test_ft_strnstr.c -o $@
+$(OBJ_DIR)/test_ft_strnstr.o: test_ft_strnstr.c
+	@mkdir -p $(@D)
+	@mkdir -p $(DEP_DIR)/$(*D)
+	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strnstr.d -c test_ft_strnstr.c -o $@
 	
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $?
 
 test_exec: $(NAME) $(TEST_OBJ)
-	$(CC) $(CFLAGS) -lbsd $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME) 
+	$(CC) $(CFLAGS) $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME) -lbsd 
 
 clean:
 	rm -rf $(OBJ_DIR) $(DEP_DIR)
