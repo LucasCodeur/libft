@@ -6,15 +6,18 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:54:45 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/06 15:08:19 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/18 11:03:58 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(const char *str)
+size_t  ft_strlen(const char *str)
 {
-	if (*str == '\0')
-		return (0);
-	return (1 + ft_strlen(str + 1));
+  size_t  i;
+
+  i = 0;
+  while (str[i])
+    i++;
+  return (i);
 }
