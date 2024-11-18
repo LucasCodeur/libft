@@ -6,11 +6,12 @@
 /*   By: lud-adam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 14:41:33 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/18 11:26:45 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:40:00 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 void    *ft_calloc(size_t nmemb, size_t size)
 {

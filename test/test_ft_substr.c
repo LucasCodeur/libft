@@ -6,7 +6,7 @@
 /*   By: lud-adam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:25:23 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/18 13:51:46 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:02:13 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	test_1_ft_substr_find_a_string(void)
 {
-	const char	src[] = "One piece est le meilleur manga au monde";
+	const char	src[] = "Kakarot";
   char  *dest;
   unsigned int  start;
   size_t  len;
 
-  start = 14;
-  len = 17;
+  start = 0;
+  len = 5;
   dest = ft_substr(src, start, len);
 	printf(BLUE"------------------- ft_substr -------------------\n\n"RESET);
 	printf(YELLOW"TEST 1 : Find a string :  \n\n"RESET);
@@ -103,9 +103,9 @@ void	test_5_ft_substr_with_src_empty_start_and_len_0(void)
 }
 void  test_ft_substr(void)
 {
-  // test_1_ft_substr_find_a_string();
+  test_1_ft_substr_find_a_string();
   // test_2_ft_substr_with_start_and_len_equal_to_0();
   // test_3_ft_substr_with_src_is_empty_start_and_len_equal_to_0();
-     test_4_ft_substr_with_start_exceed_src_and_len_equal_0();
+	// test_4_ft_substr_with_start_exceed_src_and_len_equal_0();
   // test_5_ft_substr_with_src_empty_start_and_len_0();
 }

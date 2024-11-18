@@ -6,12 +6,12 @@
 #    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/18 11:43:57 by lud-adam         ###   ########.fr        #
+#    Updated: 2024/11/18 18:15:47 by lud-adam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
-CC := cc
+CC := gcc
 CFLAGS := -Wall -Werror -Wextra -g -O0 
 # DEBUG := -g
 INC := -I.
