@@ -6,7 +6,7 @@
 /*   By: lud-adam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:30:18 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/18 19:08:37 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:37:42 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	*ft_strndup(const char *s, size_t len)
 
 	size = ft_strlen(s) + 1;
 	i = 0;
-	if (len > size)
+	if (len >= size)
 		dest = ft_calloc(size, sizeof(char));
 	else
 		dest = ft_calloc(len + 1, sizeof(char));
@@ -42,6 +42,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s[0] == '\0' || start >= (unsigned int)ft_strlen(s) || len == 0)
 	{
 		dest = malloc(1);
+		if (!dest)
+			return (dest);
 		dest[0] = '\0';
 		return (dest);
 	}
