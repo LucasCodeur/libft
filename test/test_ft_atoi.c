@@ -6,7 +6,7 @@
 /*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:36:56 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/15 18:24:36 by eveil            ###   ########lyon.fr   */
+/*   Updated: 2024/11/19 13:30:13 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ void	test_5_ft_isspace(void)
 }
 void	test_6_atoi_positive_overflow(void)
 {
-	const char nptr[50] = "9223372036854775808";
+	const char nptr[50] = "2147483649";
 	int		nb;
 
 	nb = atoi(nptr);
@@ -189,7 +189,7 @@ void	test_6_atoi_positive_overflow(void)
 
 void	test_6_ft_atoi_positive_overflow(void)
 {
-	const char nptr[50] = "9223372036854775808";
+	const char nptr[50] = "2147483649";
 	int		nb;
 
 	nb = ft_atoi(nptr);
@@ -245,8 +245,8 @@ void	test_ft_atoi(void)
 	// test_3_with_lot_of_0_and_one_plus();
 	// test_4_francinette();
 	// test_5_ft_isspace();
-	// test_6_positive_overflow();
-	test_7_negative_overflow();
+	test_6_positive_overflow();
+	// test_7_negative_overflow();
 }
 
 // Test_6 : When I put the long positive maximal it return -1
