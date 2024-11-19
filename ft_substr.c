@@ -6,7 +6,7 @@
 /*   By: lud-adam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:30:18 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/19 17:37:42 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:48:31 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static char	*ft_strndup(const char *s, size_t len)
 		dest[i] = s[i];
 		i++;
 	}
-	dest[i] = '\0';
 	return (dest);
 }
 

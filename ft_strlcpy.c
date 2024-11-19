@@ -6,12 +6,11 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:02:06 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/12 16:02:29 by lud-adam         ###   ########lyon.fr   */
+/*   Updated: 2024/11/19 17:42:29 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {

@@ -6,7 +6,7 @@
 /*   By: lud-adam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:24:37 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/19 17:12:01 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:53:31 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (final_array);
 	while (is_sep(s1[i], set) == 1)
 		i++;
-	// while (j < size)
-	// {
-	// 	final_array[j] = *s1++;
-	// 	j++;
-	// }
 	ft_memcpy(final_array, &s1[i], size);
 	final_array[size] = '\0';
 	return (final_array);
