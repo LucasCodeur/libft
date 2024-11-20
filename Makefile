@@ -6,7 +6,7 @@
 #    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/18 18:15:47 by lud-adam         ###   ########.fr        #
+#    Updated: 2024/11/20 20:15:51 by lud-adam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,15 @@ DEP_DIR := dep
 $(shell mkdir -p $(OBJ_DIR) $(DEP_DIR))
 
 # Source files
-SRC := $(shell ls *.c)
+SRC = \
+	ft_atoi.c     ft_isascii.c  ft_memcmp.c      ft_putendl.c    ft_strdup.c    ft_strlen.c   ft_strtrim.c	\
+	ft_bzero.c    ft_isdigit.c  ft_memcpy.c      ft_putnbr_fd.c  ft_striteri.c  ft_strmapi.c  ft_substr.c	\
+	ft_calloc.c   ft_isprint.c  ft_memmove.c     ft_putstr_fd.c  ft_strjoin.c   ft_strncmp.c  ft_tolower.c \
+	ft_isalnum.c  ft_itoa.c     ft_memset.c      ft_split.c      ft_strlcat.c   ft_strnstr.c  ft_toupper.c \
+	ft_isalpha.c  ft_memchr.c   ft_putchar_fd.c  ft_strchr.c     ft_strlcpy.c   ft_strrchr.c
+
+SRC_BONUS := $(*_bonus.c)
+
 
 TEST_SRC := $(shell ls test/*.c)
 
@@ -67,8 +75,11 @@ $(OBJ_DIR)/test_ft_strnstr.o: test_ft_strnstr.c
 	@mkdir -p $(DEP_DIR)/$(*D)
 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strnstr.d -c test_ft_strnstr.c -o $@
 	
-$(NAME): $(OBJ)
-	ar -rcs $(NAME) $?
+$(OBJ_BONUS): .
+
+
+$(NAME): $(OBJ) $(BONUS)
+	ar -rcs $(NAME) $^
 
 test_exec: $(NAME) $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME) -lbsd 
@@ -81,4 +92,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re test_exec
+.PHONY: all clean fclean re test_exec bonus
