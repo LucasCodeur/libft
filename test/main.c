@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:39:49 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/20 18:31:19 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:55:51 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,9 @@ int		main(void)
 		// test_ft_itoa();
 	
 	// FT_STRITERI
-		test_ft_striteri();
+		// test_ft_striteri();
+	
+	// FT_STRMAPI
+		test_ft_strmapi();
 	return (0);
 }

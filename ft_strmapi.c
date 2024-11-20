@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
+/*   By: lud-adam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 18:28:52 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/12 19:20:40 by lud-adam         ###   ########lyon.fr   */
+/*   Created: 2024/11/20 18:56:04 by lud-adam          #+#    #+#             */
+/*   Updated: 2024/11/20 19:18:22 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_is_upper(int c)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-    if (c >= 65 && c <= 90)
-        return (1);
-    return (0);
-}
+	unsigned int	i;
+	char	*dest;
+	size_t	size;
 
-int     ft_tolower(int c)
-{
-    if (ft_is_upper(c) == 1)
-        return (c + 32);
-    return (c);
+	i = 0;
+	size = ft_strlen(s);
+	dest = ft_calloc(size + 1, sizeof(char));
+	while (s[i])
+	{
+		dest[i] = f(i, s[i]);
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
