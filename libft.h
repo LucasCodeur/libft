@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:55:59 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/20 14:12:02 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:17:05 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	ft_putchar_fd(char c, int fd);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif
