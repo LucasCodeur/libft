@@ -6,12 +6,11 @@
 /*   By: lud-adam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 18:01:58 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/19 20:59:05 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:41:13 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
-#include <stdio.h>
 
 static size_t	count_words(char const *s, char c)
 {
@@ -27,20 +26,7 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static size_t	str_size(char const *s, char c, size_t *i)
-{
-	size_t	count;
-
-	count = 0;
-	while (s[*i] && (s[*i] != c || s[*i] != '\0'))
-	{
-		count++;
-		(*i)++;
-	}
-	return (count);
-}
-
-void ft_free(char **strs, size_t j)
+static char	**ft_free(char **strs, size_t j)
 {
 	size_t	i;
 
@@ -51,23 +37,33 @@ void ft_free(char **strs, size_t j)
 		i++;
 	}
 	free(strs);
+	return (NULL);
 }
 
-static char	*ft_strndup(const char *s, size_t len)
+static char	*ft_strdupp(const char *s, char c, size_t *i)
 {
 	char	*dest;
-	size_t	i;
+	size_t	len;
+	size_t	j;
 
-	i = 0;
+	len = 0;
+	j = 0;
+	while (s[*i] != c && s[*i] != '\0')
+	{
+		len++;
+		(*i)++;
+	}
 	dest = ft_calloc(len + 1, sizeof(char));
 	if (!dest)
 		return (dest);
-	while (s[i] && i < len)
+	*i -= len;
+	while (s[*i] != c && s[*i] != '\0')
 	{
-		dest[i] = s[i];
-		i++;
+		dest[j] = s[*i];
+		(*i)++;
+		j++;
 	}
-	dest[i] = '\0';
+	dest[j] = '\0';
 	return (dest);
 }
 
@@ -77,27 +73,23 @@ char	**ft_split(const char *s, char c)
 	size_t	size;
 	size_t	i;
 	size_t	j;
-	size_t	k;
 
 	size = count_words(s, c);
 	i = 0;
 	j = 0;
-	k = 0;
 	final_array = ft_calloc(size + 1, sizeof(char *));
 	if (!final_array)
 		return (final_array);
-	while (j++ < size)
-	{		
-		k = str_size(&s[i], c, &i);
-		*final_array++ = ft_strndup(&s[i - k], k - 1);
-		if (!*final_array)
-		{
-			ft_free(final_array, j);
-			return (NULL);
-		}
+	while (j < size)
+	{
+		while (s[i] == c)
+			i++;
+		final_array[j] = ft_strdupp(s, c, &i);
+		if (!final_array[j])
+			return (ft_free(final_array, j));
 		while (s[i] == c && s[i] != '\0')
 			i++;
+		j++;
 	}
-	*final_array = 0;
 	return (final_array);
 }
