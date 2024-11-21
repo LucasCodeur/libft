@@ -6,7 +6,7 @@
 /*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/20 18:55:19 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/21 01:27:33 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,12 @@ void	test_ft_split(void);
 void	test_ft_itoa(void);
 void	test_ft_striteri(void);
 void	test_ft_strmapi(void);
+void	test_ft_putstr_fd(void);
+void	test_ft_putendl_fd(void);
+void	test_ft_putnbr_fd(void);
+void	test_ft_lstnew(void);
+void	test_ft_lstadd_front(void);
+void	test_ft_lstsize(void);
 
 void    display_binary(unsigned char octet);
 

@@ -6,12 +6,12 @@
 #    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/20 20:15:51 by lud-adam         ###   ########.fr        #
+#    Updated: 2024/11/21 01:29:40 by lud-adam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
-CC := gcc
+CC := cc
 CFLAGS := -Wall -Werror -Wextra -g -O0 
 # DEBUG := -g
 INC := -I.
@@ -31,14 +31,15 @@ SRC = \
 	ft_isalnum.c  ft_itoa.c     ft_memset.c      ft_split.c      ft_strlcat.c   ft_strnstr.c  ft_toupper.c \
 	ft_isalpha.c  ft_memchr.c   ft_putchar_fd.c  ft_strchr.c     ft_strlcpy.c   ft_strrchr.c
 
-SRC_BONUS := $(*_bonus.c)
-
+SRC_BONUS := \
+	ft_lstnew_bonus.c	ft_lstadd_front_bonus.c	ft_lstsize_bonus.c
 
 TEST_SRC := $(shell ls test/*.c)
 
 # Object and dependency files
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
-DEP := $(addprefix $(DEP_DIR)/, $(SRC:.c=.d))
+OBJ_BONUS := $(addprefix $(OBJ_DIR)/, $(SRC_BONUS:.c=.o))
+DEP := $(addprefix $(DEP_DIR)/, $(SRC:.c=.d) $(SRC_BONUS:.c=.d))
 TEST_OBJ := $(addprefix $(OBJ_DIR)/, $(TEST_SRC:.c=.o))
 TEST_DEP := $(addprefix $(DEP_DIR)/, $(TEST_SRC:.c=.d))
 
@@ -75,10 +76,10 @@ $(OBJ_DIR)/test_ft_strnstr.o: test_ft_strnstr.c
 	@mkdir -p $(DEP_DIR)/$(*D)
 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strnstr.d -c test_ft_strnstr.c -o $@
 	
-$(OBJ_BONUS): .
+$(NAME): $(OBJ)
+	ar -rcs $(NAME) $^
 
-
-$(NAME): $(OBJ) $(BONUS)
+bonus: $(OBJ) $(OBJ_BONUS) 
 	ar -rcs $(NAME) $^
 
 test_exec: $(NAME) $(TEST_OBJ)
