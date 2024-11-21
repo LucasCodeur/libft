@@ -6,7 +6,7 @@
 /*   By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:47:44 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/21 01:27:33 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/21 04:54:24 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@ void	test_ft_putnbr_fd(void);
 void	test_ft_lstnew(void);
 void	test_ft_lstadd_front(void);
 void	test_ft_lstsize(void);
+void	test_ft_lstlast(void);
+void	test_ft_lstadd_back(void);
+void	test_ft_lstdelone(void);
 
 void    display_binary(unsigned char octet);
 

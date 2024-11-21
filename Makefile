@@ -6,7 +6,7 @@
 #    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/21 01:29:40 by lud-adam         ###   ########.fr        #
+#    Updated: 2024/11/21 11:45:37 by lud-adam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS := -Wall -Werror -Wextra -g -O0
 INC := -I.
 
 # Directories for object and dependency files
-OBJ_DIR := obj
+OBJ_DIR := .
 DEP_DIR := dep
 
 # Create directories if they don't exist
@@ -32,7 +32,8 @@ SRC = \
 	ft_isalpha.c  ft_memchr.c   ft_putchar_fd.c  ft_strchr.c     ft_strlcpy.c   ft_strrchr.c
 
 SRC_BONUS := \
-	ft_lstnew_bonus.c	ft_lstadd_front_bonus.c	ft_lstsize_bonus.c
+	ft_lstnew_bonus.c	ft_lstadd_front_bonus.c	ft_lstsize_bonus.c ft_lstlast_bonus.c	ft_lstadd_back_bonus.c \
+	ft_lstdelone_bonus.c ft_lstclear_bonus.c
 
 TEST_SRC := $(shell ls test/*.c)
 
@@ -76,7 +77,7 @@ $(OBJ_DIR)/test_ft_strnstr.o: test_ft_strnstr.c
 	@mkdir -p $(DEP_DIR)/$(*D)
 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strnstr.d -c test_ft_strnstr.c -o $@
 	
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(OBJ_BONUS)
 	ar -rcs $(NAME) $^
 
 bonus: $(OBJ) $(OBJ_BONUS) 
@@ -86,7 +87,7 @@ test_exec: $(NAME) $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(DEBUG) $(INC) $(TEST_OBJ) -o test_exec $(NAME) -lbsd 
 
 clean:
-	rm -rf $(OBJ_DIR) $(DEP_DIR)
+	rm -rf $(OBJ_DIR)/*.o $(DEP_DIR)/*.d
 
 fclean: clean
 	rm -f $(NAME) test_exec
