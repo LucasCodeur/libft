@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam <marvin@42.fr> >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:39:49 by lud-adam          #+#    #+#             */
-/*   Updated: 2024/11/21 05:39:24 by lud-adam         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:42:06 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,9 @@ int		main(void)
 		// test_ft_lstadd_back();
 
 	// FT_LSTDELONE	
-		test_ft_lstdelone();
-	
+		// test_ft_lstdelone();
+
+	// FT_LSTCLEAR();
+		test_ft_lstclear();
 	return (0);
 }
