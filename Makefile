@@ -6,7 +6,7 @@
 #    By: eveil <eveil@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 19:07:32 by lud-adam          #+#    #+#              #
-#    Updated: 2024/11/21 13:03:25 by lud-adam         ###   ########.fr        #
+#    Updated: 2024/11/22 16:39:27 by lud-adam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRC = \
 
 SRC_BONUS := \
 	ft_lstnew_bonus.c	ft_lstadd_front_bonus.c	ft_lstsize_bonus.c ft_lstlast_bonus.c	ft_lstadd_back_bonus.c \
-	ft_lstdelone_bonus.c ft_lstclear_bonus.c	ft_lstiter_bonus.c
+	ft_lstdelone_bonus.c ft_lstclear_bonus.c	ft_lstiter_bonus.c	ft_lstmap_bonus.c
 
 TEST_SRC := $(shell ls test/*.c)
 
