@@ -23,7 +23,7 @@ int		main(void)
 		// test_ft_isdigit();
 
 	// FT_ISISALNUM
-		test_ft_isalnum();
+		// test_ft_isalnum();
 	
 	// FT_ISASCII
 		// test_ft_isascii();
@@ -141,5 +141,9 @@ int		main(void)
 	
 	// FT_LSTITER()
 		// test_ft_lstiter();
+  
+  // FT_LSTMAP
+  test_ft_lstmap();
+  
 	return (0);
 }

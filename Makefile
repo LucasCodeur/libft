@@ -77,7 +77,7 @@ $(OBJ_DIR)/test_ft_strnstr.o: test_ft_strnstr.c
 	@mkdir -p $(DEP_DIR)/$(*D)
 	$(CC) -lbsd $(CFLAGS) $(INC) -MMD -MP -MF  $(DEP_DIR)/test_ft_strnstr.d -c test_ft_strnstr.c -o $@
 	
-$(NAME): $(OBJ) $(OBJ_BONUS)
+$(NAME): $(OBJ) 
 	ar -rcs $(NAME) $^
 
 bonus: $(OBJ) $(OBJ_BONUS) 

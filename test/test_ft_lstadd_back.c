@@ -14,10 +14,6 @@
 
 void	test_1_ft_lstadd_back_add_new_node_at_the_end()
 {
-	int	nb;
-
-	nb = 0;
-
 	t_list	*head = NULL; // Begin of the list
 												//
 	t_list	*node1 = ft_lstnew("est le meilleur manga");
@@ -28,7 +24,6 @@ void	test_1_ft_lstadd_back_add_new_node_at_the_end()
 	ft_lstadd_front(&head, node2);
 	t_list *current = head;
 	
-	nb = ft_lstsize(current);
 	ft_lstadd_back(&head, node3);
 	printf(BLUE"------------------- ft_lstaddback -------------------\n\n"RESET);
 	printf(YELLOW"TEST 1 : add a new node at the end of the list :  \n\n"RESET);
