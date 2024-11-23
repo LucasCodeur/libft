@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t s_s1;
-	size_t s_s2;
+	size_t	s_s1;
+	size_t	s_s2;
 	char	*final_array;
 
 	s_s1 = ft_strlen(s1);
@@ -25,6 +25,6 @@ char *ft_strjoin(char const *s1, char const *s2)
 		return (final_array);
 	ft_memcpy(final_array, s1, s_s1);
 	ft_memcpy(&final_array[s_s1], s2, s_s2);
-	final_array[s_s1 + s_s2] = '\0'; 
+	final_array[s_s1 + s_s2] = '\0';
 	return (final_array);
 }

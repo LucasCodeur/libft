@@ -12,19 +12,15 @@
 
 #include "libft.h"
 
-
-void    *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t elements, size_t size)
 {
-  void  *memory_block;
+	void	*memory_block;
 
-  if (nmemb == 0 || size == 0)
-  {
-    memory_block = malloc(0);
-    return (memory_block);
-  }
-  memory_block = malloc(nmemb * size);
-  if (!memory_block)
-    return (NULL);
-  ft_bzero(memory_block, size * nmemb);
-  return (memory_block);
+	if (elements == 0 || size == 0)
+		return (malloc(0));
+	memory_block = malloc(elements * size);
+	if (!memory_block)
+		return (NULL);
+	ft_bzero(memory_block, elements * size);
+	return (memory_block);
 }

@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
-	size_t to_reach;
+	size_t	to_reach;
 
 	i = 0;
 	to_reach = ft_strlen(s);

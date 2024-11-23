@@ -13,37 +13,24 @@
 #include "libft.h"
 #include "test/functions_test.h"
 
-// void    *ft_memmove(void *dest, const void *src, size_t n)
-// {
-
-//     unsigned char *temp;
-
-//     temp = malloc(n);
-//     if (!temp)
-//         return (temp);
-//     ft_memcpy(temp, src, n);
-//     ft_memcpy(dest, temp, n);
-//     free(temp);
-//     return (dest);
-// } 
-void    *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-    unsigned char *p_dest;
-    const unsigned char *p_src;
+	const unsigned char	*p_src;
+	unsigned char		*p_dest;
 
-    p_dest = (unsigned char *)dest;
-    p_src = (const unsigned char *)src;
-    // if (!p_dest && !p_src)
-    //     return (NULL);
-    if (p_dest <= p_src)
-        ft_memcpy(dest, src, n);
-    else 
-    {
-        while (n > 0)
-        {
-            p_dest[n - 1] = p_src[n - 1];
-            n--;
-        }
-    }
-    return (dest);
+	p_dest = (unsigned char *)dest;
+	p_src = (const unsigned char *)src;
+	if (!p_dest && !p_src)
+		return (NULL);
+	if (p_dest <= p_src)
+		ft_memcpy(dest, src, n);
+	else
+	{
+		while (n > 0)
+		{
+			p_dest[n - 1] = p_src[n - 1];
+			n--;
+		}
+	}
+	return (dest);
 }
