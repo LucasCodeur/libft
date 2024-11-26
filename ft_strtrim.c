@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 static size_t	is_sep(char const c, char const *set)
 {
@@ -30,23 +30,23 @@ static size_t	is_sep(char const c, char const *set)
 
 static size_t	count_without_sep(char const *s1, char const *set)
 {
-	size_t	i;
+	size_t	size_sep;
 	size_t	size_with_sep;
 	size_t	index;
 
-	i = 0;
+	size_sep = 0;
 	size_with_sep = ft_strlen(s1);
 	index = size_with_sep - 1;
-	while (is_sep(s1[i], set) == 1 && s1[i])
-		i++;
-	if (s1[i] == '\0')
+	while (is_sep(s1[size_sep], set) == 1 && s1[size_sep])
+		size_sep++;
+	if (s1[size_sep] == '\0')
 		return (0);
 	while (is_sep(s1[index], set) == 1 && s1[index])
 	{
 		index--;
-		i++;
+		size_sep++;
 	}
-	return (size_with_sep - i);
+	return (size_with_sep - size_sep);
 }
 
 static char	*ft_check_if_size_equal_0(void)

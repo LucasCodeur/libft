@@ -13,8 +13,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
 # include <stddef.h>
 
 typedef struct s_list
@@ -58,7 +56,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void	*ft_calloc(size_t elements, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 // 4. Integer Parsing and Conversion Functions
 int		ft_atoi(const char *nptr);
