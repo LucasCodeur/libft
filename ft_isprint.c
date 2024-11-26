@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-int	ft_space(int c)
+static int	ft_space(int c)
 {
 	if (c == ' ')
 		return (1);
 	return (0);
 }
 
-int	ft_isponctuation(int c)
+static int	ft_isponctuation(int c)
 {
 	if ((c >= '!' && c <= '/') || (c >= '[' && c <= '`') || (c >= '{'
 			&& c <= '~') || (c >= ':' && c <= '@'))

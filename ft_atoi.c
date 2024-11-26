@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r');
 }
 
-int	ft_is_plus_or_minus(int c)
+static int	ft_is_plus_or_minus(int c)
 {
 	return (c == '-' || c == '+');
 }
 
-int	ft_atoi(const char *nptr)
+static int	ft_atoi(const char *nptr)
 {
 	int		sign;
 	long	result;
