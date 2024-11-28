@@ -23,7 +23,7 @@ static int	ft_is_plus_or_minus(int c)
 	return (c == '-' || c == '+');
 }
 
-static int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		sign;
 	long	result;
